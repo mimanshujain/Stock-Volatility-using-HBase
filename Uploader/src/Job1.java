@@ -8,7 +8,7 @@ import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.hbase.util.Bytes;
 public class Job1 {
 	/**
-	 * @author ruhansa
+	 * @author mimanshu
 	 * read files line by line, put the data into hbase style table
 	 * input: <key, value>, key: line number, value: line
 	 * output: <key, value>, key: rowid, value: hbase row content
@@ -41,10 +41,8 @@ public class Job1 {
 				try {
 					context.write(new ImmutableBytesWritable(rowid), p);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
